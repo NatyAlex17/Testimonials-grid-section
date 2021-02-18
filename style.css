@@ -1,0 +1,253 @@
+@font-face
+{
+    font-family: 'barlow-post';
+    src: url('/Barlow_Semi_Condensed/BarlowSemiCondensed-Regular.ttf');
+}
+@font-face
+{
+    font-family: 'barlow-topic';
+    src: url('/Barlow_Semi_Condensed/BarlowSemiCondensed-SemiBold.ttf');
+}
+@font-face
+{
+    font-family: 'barlow-status';
+    src: url('/Barlow_Semi_Condensed/BarlowSemiCondensed-ExtraLightItalic.ttf');
+}
+@font-face
+{
+    font-family: 'barlow-r';
+    src: url('/Barlow_Semi_Condensed/BarlowSemiCondensed-Light.ttf');
+}
+
+
+
+*,*::after,*::before
+{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+:root
+{
+  --M-violet: hsl(263, 55%, 52%);
+  --d-gray-blue: hsl(217, 19%, 35%);
+  --d-blac-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --L-gray: hsl(0, 0%, 81%);
+  --Light-gray-blue: hsl(210, 46%, 95%);
+}
+
+html
+{
+    font-size: 40.5%;
+}
+
+body
+{
+    font-family: "barlow-r";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--L-gray);
+}
+
+
+
+.container
+{
+    
+    display: grid;
+    grid-template-columns: repeat(12,minmax(6rem,8rem));
+    grid-template-rows: 16rem;
+    gap: 4rem;
+    padding: 2rem;
+    
+}
+
+/*containers*/
+.horizontal_l,.horizontal_s,.vertical
+{
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+}
+
+.horizontal_l
+{
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+.horizontal_s
+{
+    grid-column: span 3;
+    grid-row: span 2;
+
+}
+
+.vertical
+{
+    grid-column: span 3;
+   grid-row: span 4;
+}
+/* colors and effect */
+.bg1
+{
+    background-color: var(--M-violet);
+    color: var(--White);
+    background-image: url('/images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position:right 7rem top 0rem;
+    
+}
+.bg2
+{
+    background-color: var(--d-gray-blue);
+    color:var(--White);
+}
+
+.bg3 
+{
+    background-color: var(--Light-gray-blue);
+    color: black;
+}
+
+.bg4
+{
+    background-color: var(--d-blac-blue);
+    color: var(--White);
+    
+}
+
+/* effect */
+.anim
+{
+     transition: all 0.2s ease-in;
+}
+
+.anim:hover
+{
+    box-shadow: 1rem 1rem 1rem rgb(139, 135, 135);
+    transform: scale(1.01);
+}
+
+
+/* contents **/
+
+.info_box
+{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5rem;
+}
+.profile_pic
+{
+    width: 5rem;
+}
+.profile_pic img
+{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border:solid 0.3rem rgba(226, 223, 226, 0.789);
+}
+.horizontal_l .profile_pic img
+{
+    border:solid 0.3rem rgba(197, 104, 179, 0.789);
+}
+
+
+.info
+{
+    margin-left: 2rem;
+    align-self: center;
+}
+.name
+{
+    font-family: 'barlow-topic';
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin-bottom: 0.4rem;
+}
+.status
+{
+    font-family: 'barlow-status';
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    padding-left: 0.2rem;
+    opacity: 50%;
+}
+
+.topic
+{
+    font-family: 'barlow-topic';
+    font-size: 2.8rem;
+    line-height: 4rem;
+    margin-bottom: 2.5rem;
+}
+
+.post
+{
+    font-family: 'barlow-post';
+    font-size: 2rem;
+    opacity: 70%;
+    text-align: left;
+}
+
+
+
+@media only screen and (max-width: 850px)
+{
+    
+    body
+    {
+        height: auto;
+        
+    }
+    .container
+    {
+      
+        display: grid;
+        grid-template-columns: repeat(8,1fr);
+        gap: 4rem;
+        padding: 2rem;
+    }
+    
+    .horizontal_l
+    {
+        grid-column: 2 / 8;
+    }
+    .horizontal_s
+    {
+        grid-column: 2 / span 3;
+    }
+    .vertical
+    {
+        grid-column: 5 / span 3;
+    }
+
+}
+
+@media only screen and (max-width: 600px)
+{
+    
+    .container
+    {
+       
+        display: flex;
+        flex-direction: column;
+    }
+    .container > *
+    {
+        margin-bottom: 4rem;
+    }
+
+}
+
+
