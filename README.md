@@ -5,7 +5,7 @@
     
  ## 2.Technology 
   
-...  #### Html5
+     #### Html5
      #### Css3 
  ## 3. Hosted @
 
